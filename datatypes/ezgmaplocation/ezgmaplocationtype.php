@@ -122,7 +122,7 @@ class eZGmapLocationType extends eZDataType
             	$location = eZGmapLocation::fetch( $contentObjectAttribute->attribute('id'), $contentObjectAttribute->attribute('version') );
             	$location->setAttribute( 'latitude', $latitude );
             	$location->setAttribute( 'longitude', $longitude );
-            	$location->setAttribute( 'address', $address );
+            	$location->setAttribute( 'address', mb_substr($address, 0, 150) );
             }
             else
             {
@@ -131,7 +131,7 @@ class eZGmapLocationType extends eZDataType
 		                        'contentobject_version' => $contentObjectAttribute->attribute('version'),
 		                        'latitude' => $latitude,
 		                        'longitude' => $longitude,
-		                        'address' => $address
+		                        'address' => mb_substr($address, 0, 150)
 		                         ) );
 		        $contentObjectAttribute->setAttribute( 'data_int', 1 );
             }
@@ -304,7 +304,7 @@ class eZGmapLocationType extends eZDataType
                             'contentobject_version' => $contentObjectAttribute->attribute('version'),
                             'latitude' => $data[1],
                             'longitude' => $data[2],
-                            'address' => $data[3]
+                            'address' => mb_substr($data[3], 0, 150)
                          ));
             $contentObjectAttribute->setContent( $location );
     	}
