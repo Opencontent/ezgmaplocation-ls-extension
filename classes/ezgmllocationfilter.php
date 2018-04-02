@@ -30,7 +30,7 @@
 
 class ezgmlLocationFilter
 {
-    function ezgmlLocationFilter()
+    function __construct()
     {
     }
 
