@@ -13,11 +13,6 @@
     "require": {
         "ezsystems/ezpublish-legacy-installer": "*"
     },
-    "suggest": {
-        "ezsystems/ezflow-ls-extension": "~5.4@beta",
-        "ezsystems/ezwebin-ls-extension": "~5.4@beta",
-        "ezsystems/ezdemo-ls-extension": "~5.4@beta"
-    },
     "extra": {
         "ezpublish-legacy-extension-name": "ezgmaplocation"
     }
